@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 @DiscriminatorValue("Client")
+@PrimaryKeyJoinColumn(name = "CLIENT_ID")
 public class Client extends User {
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations = new ArrayList<Reservation>();

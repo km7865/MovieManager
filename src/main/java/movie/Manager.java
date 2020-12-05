@@ -5,6 +5,7 @@ import java.util.Date;
 
 @Entity
 @DiscriminatorValue("Manager")
+@PrimaryKeyJoinColumn(name = "MANAGER_ID")
 public class Manager extends User {
     @OneToOne
     @JoinColumn(name = "ACCOUNT_ID")
