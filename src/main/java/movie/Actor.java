@@ -24,5 +24,4 @@ public class Actor
 	@Column(name = "ACTOR_ROLE")
 	@Enumerated(EnumType.STRING)
 	private Role role;
-
 }

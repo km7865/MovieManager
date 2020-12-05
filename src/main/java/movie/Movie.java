@@ -17,8 +17,7 @@ public class Movie extends BaseEntity {
 	//배우정보List
 	@ElementCollection //디폴트 : LAZY
 	@CollectionTable(name="ACTOR",
-			joinColumns = @JoinColumn(name = "ACTOR_ID")
-	)
+			joinColumns = @JoinColumn(name = "ACTOR_ID"))
     private List<Actor> actors = new ArrayList<Actor>();
 	
 	
