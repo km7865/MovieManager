@@ -19,8 +19,7 @@ public class Movie extends BaseEntity {
 	@CollectionTable(name="ACTOR",
 			joinColumns = @JoinColumn(name = "ACTOR_ID"))
     private List<Actor> actors = new ArrayList<Actor>();
-	
-	
+
 	@Column(name = "DIRECTOR")
     private String director;
 	@Column(name = "STORY")

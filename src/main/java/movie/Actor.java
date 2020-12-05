@@ -1,27 +1,35 @@
 package movie;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
-@Table(name = "ACTOR")
+@Embeddable
 public class Actor
 {
-	@Id
-	@Column(name = "ACTOR_ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	@Column(name = "ACTOR_NAME")
 	private String name;
-	@Column(name = "ACTOR_ROLE_NAME")
 	private String roleName;
-	@Column(name = "ACTOR_ROLE")
-	@Enumerated(EnumType.STRING)
 	private Role role;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 }
