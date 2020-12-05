@@ -41,6 +41,11 @@ public class Movie extends BaseEntity {
 	@OneToMany(mappedBy = "movie")
 	private List<Schedule> schedules = new ArrayList<Schedule>();
 
+	public void addMovie(Schedule schedule)
+	{
+		schedules.add(schedule);
+		schedule.setMovie(this);
+	}
 	
 
 	public String getTitle() {
@@ -105,5 +110,13 @@ public class Movie extends BaseEntity {
 
 	public void setStatistic(Statistic statistic) {
 		this.statistic = statistic;
+	}
+
+	public List<Schedule> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<Schedule> schedules) {
+		this.schedules = schedules;
 	}
 }
