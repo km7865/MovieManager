@@ -115,7 +115,6 @@ public class JPAMain {
             System.out.println("고객2 이 결제한 금액 : " + c2.getReservations().get(0).getBilling().getPrice());
 
 
-
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
