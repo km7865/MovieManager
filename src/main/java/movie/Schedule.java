@@ -15,13 +15,17 @@ public class Schedule extends BaseEntity
 	@Column(name = "SCHEDULE_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	@Column(name = "MOV_NUM")
 	private Long movNum;
+
 	@Column(name = "SH_NUM")
 	private Long shNum;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SCH_START_TIME")
 	private Date schStartTime; //timestampe
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SCH_END_TIME")
 	private Date schEndTime;	//timestampe
