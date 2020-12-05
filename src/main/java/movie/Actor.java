@@ -7,6 +7,8 @@ public class Actor
 {
 	private String name;
 	private String roleName;
+
+	@Enumerated(EnumType.STRING)
 	private Role role;
 
 	public String getName() {

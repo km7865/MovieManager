@@ -10,7 +10,9 @@ public class Billing {
     private Long id;
     private Long price;
     private String bank;
-    private int status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
+    @Column(name = "PAYMENT_DATE")
     private Date paymentDate;
 
     public Long getId() {
@@ -37,11 +39,11 @@ public class Billing {
         this.bank = bank;
     }
 
-    public int getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

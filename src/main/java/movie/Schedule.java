@@ -28,7 +28,7 @@ public class Schedule extends BaseEntity
 	@ManyToOne
 	@JoinColumn(name="MOVIE_ID")
 	private Movie movie;
-
+	
 	//상영관
 	@ManyToOne
 	@JoinColumn(name="SCREEN_HALL_ID")
@@ -37,7 +37,6 @@ public class Schedule extends BaseEntity
 	//예매
 	@OneToMany(mappedBy = "schedule")
 	private List<Reservation> reservations = new ArrayList<Reservation>();
-
 
 	public Date getSchStartTime() {
 		return schStartTime;
@@ -60,10 +59,7 @@ public class Schedule extends BaseEntity
 	}
 
 	public void setMovie(Movie movie) {
-		if(this.movie != null)
-			movie.getSchedules().remove(this);
 		this.movie = movie;
-		movie.getSchedules().add(this);
 	}
 
 	public ScreenHall getScreenHall() {
