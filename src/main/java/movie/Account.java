@@ -16,6 +16,8 @@ public class Account {
     @Column(name = "CREATE_DATE")
     private Date createDate;
     private String bank;
+    @Column(name = "ACCOUNT_NUM")
+    private Long accountNum;
     private Long balance;
 
     public Long getId() {
