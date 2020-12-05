@@ -13,7 +13,7 @@ public abstract class User {
     private String password;
     private String name;
 
-    @Column("CALL_NUM")
+    @Column(name = "CALL_NUM")
     private String callNum;
     private String RRN;
     private String email;
