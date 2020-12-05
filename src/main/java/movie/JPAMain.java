@@ -4,9 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +15,6 @@ public class JPAMain {
         EntityManager em = emf.createEntityManager();
 
         EntityTransaction tx = em.getTransaction();
-
         try {
             tx.begin();
             Client client1 = new Client();
@@ -109,11 +105,16 @@ public class JPAMain {
             em.persist(reservation2);
             em.persist(billing1);
             em.persist(billing2);
+
             em.flush();
             em.clear();
 
-            Client c = em.find(Client.class, client1.getId());
-            System.out.println(c.getReservations().get(0).getSchedule().getMovie().getTitle());
+            Client c1 = em.find(Client.class, client1.getId());
+            Client c2 = em.find(Client.class, client2.getId());
+            System.out.println("고객1 이 예매한 영화의 제목 : " + c1.getReservations().get(0).getSchedule().getMovie().getTitle());
+            System.out.println("고객2 이 결제한 금액 : " + c2.getReservations().get(0).getBilling().getPrice());
+
+
 
             tx.commit();
         } catch (Exception e) {
