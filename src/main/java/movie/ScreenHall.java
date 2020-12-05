@@ -16,4 +16,6 @@ public class ScreenHall
 	private String shSpecialNote;
 	@Column(name = "THE_NAME")
 	private String theName;
+
+
 }

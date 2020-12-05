@@ -32,8 +32,11 @@ public class JPAMain {
             movie.setTitle("이웃사촌");
             movie.setAgeLimit(12L);
             movie.setDirector("이환경");
+            movie.setStory("백수가장 좌천위기 도청팀장 대권(정우)은 팀원들과 함께 해외에서 입국하자마자 자택 격리된 정치인 가족을 24시간 감시하라는 미션을 받는다.");
 
             movie.getActors().add(actor1);
+
+
 
             em.persist(client1);
             em.persist(client2);

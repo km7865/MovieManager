@@ -15,13 +15,7 @@ public class Schedule extends BaseEntity
 	@Column(name = "SCHEDULE_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(name = "MOV_NUM")
-	private Long movNum;
-
-	@Column(name = "SH_NUM")
-	private Long shNum;
-
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SCH_START_TIME")
 	private Date schStartTime; //timestampe
@@ -35,7 +29,7 @@ public class Schedule extends BaseEntity
 	@JoinColumn(name="MOVIE_ID")
 	private Movie movie;
 	
-	//영화
+	//상영관
 	@ManyToOne
 	@JoinColumn(name="SCREEN_HALL_ID")
 	private ScreenHall screenHall;
@@ -43,22 +37,6 @@ public class Schedule extends BaseEntity
 	//예매
 	@OneToMany(mappedBy = "schedule")
 	private List<Reservation> reservations = new ArrayList<Reservation>();
-
-	public Long getMovNum() {
-		return movNum;
-	}
-
-	public void setMovNum(Long movNum) {
-		this.movNum = movNum;
-	}
-
-	public Long getShNum() {
-		return shNum;
-	}
-
-	public void setShNum(Long shNum) {
-		this.shNum = shNum;
-	}
 
 	public Date getSchStartTime() {
 		return schStartTime;
